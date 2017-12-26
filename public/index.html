@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<!-- we are importing bootstrap file in the start because we want to have the formatting changed in the beginning itself -->
+	<title>Contact List App</title>
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Contact List app</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Number</th>
+					<th>Action</th>
+					<th>&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input class="form-control" ng-model="contact.name"></td>
+					<td><input class="form-control" ng-model="contact.email"></td>
+					<td><input class="form-control" ng-model="contact.number"></td>
+					<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>				
+					<td><button class="btn btn-info" ng-click="update()">Update</button></td>		
+				</tr>
+				<tr ng-repeat="con in contactlist">
+					<td>{{con.name}}</td>
+					<td>{{con.email}}</td>
+					<td>{{con.number}}</td>			
+					<td><button class="btn btn-danger" ng-click="remove(con._id)">Remove</button></td>	
+					<td><button class="btn btn-warning" ng-click="edit(con._id)">Edit</button></td>	
+				</tr>
+			</tbody>
+		</table> 
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+	 <!--we are importing angularjs in the last because we don't need it to load right away and it would help the site to load faster-->
+
+	<script src="controllers/controller.js"></script>
+	
+</body>
+</html>
