@@ -17,7 +17,7 @@ node server
 mongod
 ```
 
-### To access the website, open the browser and type URL:
+### To access the website, open the browser and type URL :
 ```
 localhost:3000
 ```
